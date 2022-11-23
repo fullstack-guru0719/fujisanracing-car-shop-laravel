@@ -50,13 +50,17 @@
     @endif
 @endpush
 
-<div class="p-5 border-t border-slate-200/60 dark:border-darkmode-400">
+<div class="sidebar">
     @foreach ($menu->items as $menuItem)
         <div class="menu-block">
             <a class="flex items-center text-primary font-medium" href="">
-                <i data-lucide="activity" class="w-4 h-4 mr-2"></i> {{ trans($menuItem['name']) }}
-                {{-- <i class="icon icon-arrow-down right" id="down-icon"></i> --}}
+                <h2>{{ trans($menuItem['name']) }}</h2>
             </a>
+            {{-- <div class="menu-block-title">
+                {{ trans($menuItem['name']) }}
+
+                <i class="icon icon-arrow-down right" id="down-icon"></i>
+            </div> --}}
 
             <div class="menu-block-content">
                 <ul class="menubar">
@@ -79,16 +83,11 @@
                     @endif
 
                     @foreach ($menuItem['children'] as $subMenuItem)
-                        {{-- <li class="menu-item {{ $menu->getActive($subMenuItem) }}">
-                            <a class="text-danger" href="{{ $subMenuItem['url'] }}">
-                                {{ trans($subMenuItem['name']) }}
+                        <li class="menu-item {{ $menu->getActive($subMenuItem) }}" style="margin-top:20px">
+                            <a class="text-primary" href="{{ $subMenuItem['url'] }}">
+                                <h3 class="text-primary">{{ trans($subMenuItem['name']) }}</h3>
                             </a>
-
-                            <i class="icon angle-right-icon"></i>
-                        </li> --}}
-                        <a class="flex items-center mt-5" href="{{ $subMenuItem['url'] }}">
-                            <i data-lucide="box" class="w-4 h-4 mr-2"></i> {{ trans($subMenuItem['name']) }}
-                        </a>
+                        </li>
                     @endforeach
                 </ul>
             </div>
