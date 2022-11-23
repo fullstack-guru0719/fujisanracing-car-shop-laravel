@@ -10,6 +10,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="content-language" content="{{ app()->getLocale() }}">
+
+    <link rel="stylesheet" href="{{ asset('dist/css/app.css') }}">
+
+
     <link rel="stylesheet" href="{{ bagisto_asset('css/leaflet.min.css') }}">
     <link rel="stylesheet" href="{{ bagisto_asset('css/nice-select.min.css') }}">
     <link rel="stylesheet" href="{{ bagisto_asset('css/slick.min.css') }}">
@@ -34,7 +38,6 @@
     @endif
 
     @yield('head')
-
     @section('seo')
         @if (! request()->is('/'))
             <meta name="description" content="{{ core()->getCurrentChannel()->description }}"/>
@@ -56,7 +59,7 @@
 </head>
 
 
-<body @if (core()->getCurrentLocale() && core()->getCurrentLocale()->direction == 'rtl') class="rtl" @endif style="scroll-behavior: smooth;">
+<body class="py-5" @if (core()->getCurrentLocale() && core()->getCurrentLocale()->direction == 'rtl') class="rtl" @endif style="scroll-behavior: smooth;">
 
     {!! view_render_event('bagisto.shop.layout.body.before') !!}
 
@@ -173,6 +176,9 @@
             </div>
         </div>
     </aside>
+
+
+    <script  src="{{ asset('dist/js/app.js') }}"></script>
     <!--== End Responsive Menu Wrapper ==-->
 
     <!--=======================Javascript============================-->

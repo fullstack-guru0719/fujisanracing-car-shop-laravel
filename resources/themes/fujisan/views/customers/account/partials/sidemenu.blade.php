@@ -50,14 +50,13 @@
     @endif
 @endpush
 
-<div class="sidebar">
+<div class="p-5 border-t border-slate-200/60 dark:border-darkmode-400">
     @foreach ($menu->items as $menuItem)
         <div class="menu-block">
-            <div class="menu-block-title">
-                {{ trans($menuItem['name']) }}
-
-                <i class="icon icon-arrow-down right" id="down-icon"></i>
-            </div>
+            <a class="flex items-center text-primary font-medium" href="">
+                <i data-lucide="activity" class="w-4 h-4 mr-2"></i> {{ trans($menuItem['name']) }}
+                {{-- <i class="icon icon-arrow-down right" id="down-icon"></i> --}}
+            </a>
 
             <div class="menu-block-content">
                 <ul class="menubar">
@@ -80,13 +79,16 @@
                     @endif
 
                     @foreach ($menuItem['children'] as $subMenuItem)
-                        <li class="menu-item {{ $menu->getActive($subMenuItem) }}">
+                        {{-- <li class="menu-item {{ $menu->getActive($subMenuItem) }}">
                             <a class="text-danger" href="{{ $subMenuItem['url'] }}">
                                 {{ trans($subMenuItem['name']) }}
                             </a>
 
                             <i class="icon angle-right-icon"></i>
-                        </li>
+                        </li> --}}
+                        <a class="flex items-center mt-5" href="{{ $subMenuItem['url'] }}">
+                            <i data-lucide="box" class="w-4 h-4 mr-2"></i> {{ trans($subMenuItem['name']) }}
+                        </a>
                     @endforeach
                 </ul>
             </div>
