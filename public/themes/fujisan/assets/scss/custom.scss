@@ -1,0 +1,226 @@
+.product-item__thumb {
+    position: relative;
+  
+    .thumb-secondary {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      visibility: hidden;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+  
+    img {
+      text-align: center;
+      display: block;
+      margin: auto;
+    }
+  }
+  
+  .product-item__content {
+    padding: 0 30px 25px;
+    position: relative;
+  
+    .title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+  
+      a {
+        color: #1b1b1c;
+  
+        &:hover {
+          color: #E72629;
+        }
+      }
+    }
+  
+    .price {
+      color: #666;
+      -webkit-transition: .4s;
+      transition: .4s;
+  
+      strong {
+        color: #1b1b1c;
+        font-weight: 600;
+      }
+    }
+  }
+  
+  @media only screen and (min-width: 768px) and (max-width: 991.98px) {
+    .product-item__content .title {
+      font-size: 16px;
+    }
+  }
+  
+  @media only screen and (max-width: 767.98px) {
+    .product-item__content .title {
+      font-weight: 500;
+      font-size: 16px;
+    }
+  }
+  
+  .product-item__action {
+    padding: 0 30px;
+    position: absolute;
+    left: 0;
+    bottom: 18px;
+    font-size: 22px;
+    line-height: 1;
+  
+    a, button {
+      color: #303030;
+      margin-right: 15px;
+      -webkit-transform: translateX(-10px);
+      transform: translateX(-10px);
+      opacity: 0;
+      visibility: hidden;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+  
+    a:last-child, button:last-child {
+      margin-right: 0;
+    }
+  
+    a:hover, button:hover {
+      color: #E72629;
+    }
+  }
+  
+  .product-item .ratting {
+    color: #E72629;
+    font-size: 18px;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .product-item__sale {
+    background-color: #1b1b1c;
+    color: #fff;
+    display: inline-table;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 1px 6px;
+    position: absolute;
+    text-transform: uppercase;
+    left: 30px;
+    right: auto;
+    top: 30px;
+    text-align: center;
+    letter-spacing: .05em;
+  }
+  
+  .product-item__desc {
+    display: none;
+  }
+  
+  .product-item:hover {
+    -webkit-box-shadow: 0 5px 11px rgba(0, 0, 0, 0.14);
+    box-shadow: 0 5px 11px rgba(0, 0, 0, 0.14);
+  
+    .product-item__thumb {
+      .thumb-primary {
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+  
+      .thumb-secondary {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  
+    .product-item__content .price {
+      opacity: 0;
+      visibility: hidden;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+  
+    .product-item__action {
+      a, button {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+      }
+  
+      a:nth-child(2), button:nth-child(2) {
+        -webkit-transition-delay: 0.3s;
+        transition-delay: 0.3s;
+      }
+  
+      a:nth-child(3), button:nth-child(3) {
+        -webkit-transition-delay: 0.5s;
+        transition-delay: 0.5s;
+      }
+  
+      a:nth-child(4), button:nth-child(4) {
+        -webkit-transition-delay: 0.7s;
+        transition-delay: 0.7s;
+      }
+    }
+  }
+
+.checkout-process .col-main ul.checkout-steps {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #c7c7c7;
+}
+
+.address-card {
+  display:inline-block;
+  margin-right:25px;
+  padding: 15px;
+}
+
+.address-card.selected {
+  display:inline-block;
+  box-sizing:border-box;
+  margin-right:15px;
+  -webkit-box-shadow:inset 0px 0px 0px 5px $brandColor;
+  -moz-box-shadow:inset 0px 0px 0px 5px $brandColor;
+  box-shadow:inset 0px 0px 0px 5px $brandColor;
+}
+
+.card-input-element:checked + .card-input {
+  box-shadow: 0 0 3px 3px $brandColor;
+}
+
+.card-input {
+  padding: 8px;
+}
+
+.card-input:hover {
+  cursor: pointer;
+}
+
+.card-input-element {
+  display: none;
+}
+
+.billing-form-wrap .form-header {
+  margin-bottom: 20px;
+}
+
+.control-group.input-item {
+  display:block;
+}
+
+input[type="checkbox"] {
+  display: inline-block;
+}
+
+.control-group.checkbox { 
+  margin: 15px 0 15px 0;
+  display: block;
+}

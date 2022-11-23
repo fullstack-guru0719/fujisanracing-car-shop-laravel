@@ -1,0 +1,43 @@
+@import 'tableofcontent';
+
+// Base
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/typography';
+
+// Utilities
+@import 'utilities/common';
+@import 'utilities/color';
+@import 'utilities/spacing';
+
+// Layout Header
+@import "layout/header";
+@import 'utilities/navbar';
+@import "layout/footer";
+
+// Components
+@import "components/slider";
+@import "components/banner";
+@import "components/call-to-action";
+@import "components/product";
+@import "components/countdown";
+@import "components/flash-deals";
+@import "components/newsletter";
+@import "components/brand-logo";
+@import "components/off-canvas";
+@import "components/page-header";
+@import "components/gallery";
+
+
+// Pages
+@import "pages/contact";
+@import "pages/shop";
+@import "pages/product-details";
+@import "pages/cart";
+@import "pages/checkout";
+@import "pages/blog";
+@import "pages/blog-details";
+
+// Elements
+@import "elements/category-tiles";
+@import "custom";

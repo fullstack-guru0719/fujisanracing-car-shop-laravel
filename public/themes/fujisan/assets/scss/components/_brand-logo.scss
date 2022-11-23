@@ -1,0 +1,22 @@
+/*============================
+12. Brand Logo Area Style
+=============================*/
+.brand-logo-item{
+  text-align: center;
+  display: table !important;
+  height: 85px;
+
+  a{
+      display: table-cell;
+      vertical-align: middle;
+  }
+
+  img{
+    margin: auto;
+  }
+}
+
+.brand-logo-content .slick-track {
+  display: flex;
+  align-items: center;
+}
