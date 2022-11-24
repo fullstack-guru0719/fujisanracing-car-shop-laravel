@@ -74,7 +74,12 @@ class CartController extends Controller
             }
 
             if ($result instanceof CartModel) {
-                session()->flash('success', __('shop::app.checkout.cart.item.success'));
+                // toarst part
+                $notification = array(
+                    'message' => __('shop::app.checkout.cart.item.success'),
+                    'alert-type' => 'success'
+                );
+                // session()->flash('success', __('shop::app.checkout.cart.item.success'));
 
                 if ($customer = auth()->guard('customer')->user()) {
                     $this->wishlistRepository->deleteWhere(['product_id' => $id, 'customer_id' => $customer->id]);
@@ -87,17 +92,22 @@ class CartController extends Controller
                 }
             }
         } catch(\Exception $e) {
-            session()->flash('warning', __($e->getMessage()));
+            // toarst part
+            $notification = array(
+                'message' => __($e->getMessage()),
+                'alert-type' => 'warning'
+            );
+            // session()->flash('warning', __($e->getMessage()));
 
             $product = $this->productRepository->find($id);
 
             Log::error('Shop CartController: ' . $e->getMessage(),
                 ['product_id' => $id, 'cart_id' => cart()->getCart() ?? 0]);
 
-            return redirect()->route('shop.productOrCategory.index', $product->url_key);
+            return redirect()->route('shop.productOrCategory.index', $product->url_key)->with($notification);
         }
 
-        return redirect()->back();
+        return redirect()->back()->with($notification);
     }
 
     /**
@@ -111,10 +121,15 @@ class CartController extends Controller
         $result = Cart::removeItem($itemId);
 
         if ($result) {
-            session()->flash('success', trans('shop::app.checkout.cart.item.success-remove'));
+            // toarst part
+            $notification = array(
+                'message' => trans('shop::app.checkout.cart.item.success-remove'),
+                'alert-type' => 'success'
+            );
+            // session()->flash('success', trans('shop::app.checkout.cart.item.success-remove'));
         }
 
-        return redirect()->back();
+        return redirect()->back()->with($notification);
     }
 
     /**

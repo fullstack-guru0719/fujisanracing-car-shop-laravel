@@ -26,6 +26,10 @@
     <link rel="stylesheet" href="{{ bagisto_asset('css/style.min.css') }}">
     <link rel="stylesheet" href="{{ bagisto_asset('css/helper.min.css') }}">
 
+    {{-- begin toarst --}}
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">
+    {{-- end toarst  --}}
+
     <!--[if lt IE 9]>
     <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -207,6 +211,33 @@
     <!--=== Active Js ===-->
     <script src="{{ bagisto_asset('js/active.js') }}"></script>
     <!-- endbuild -->
+
+    {{-- toarst part --}}
+    {{-- toastr js --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+    <script>
+        @if(Session::has('message'))
+            var type = "{{ Session::get('alert-type', 'info') }}";
+            switch(type){
+                case 'info':
+                    toastr.info("{{ Session::get('message') }}");
+                    break;
+
+                case 'warning':
+                    toastr.warning("{{ Session::get('message') }}");
+                    break;
+
+                case 'success':
+                    toastr.success("{{ Session::get('message') }}");
+                    break;
+
+                case 'error':
+                    toastr.error("{{ Session::get('message') }}");
+                    break;
+            }
+        @endif
+    </script>
+    {{-- end toarst --}}
 </body>
 
 </html>
