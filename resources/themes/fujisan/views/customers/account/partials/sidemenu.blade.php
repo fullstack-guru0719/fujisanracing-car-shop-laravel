@@ -52,7 +52,7 @@
 
 <div class="sidebar">
     @foreach ($menu->items as $menuItem)
-        <div class="menu-block">
+        <div class="menu-block" style="margin-top:20px">
             <a class="flex items-center text-primary font-medium" href="">
                 <h2>{{ trans($menuItem['name']) }}</h2>
             </a>

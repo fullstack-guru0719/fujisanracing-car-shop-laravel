@@ -108,8 +108,12 @@
                                                         @else
                                                             <input type="hidden" name="quantity" value="1">
                                                         @endif
-
-                                                        <input class="btn btn-bordered" type="submit" value="Add to Cart" />
+                                                        <button onclick="document.getElementById('add-to-cart-{{$product->product_id}}').submit()" class="btn btn-bordered" type="submit" value="Add to Cart">Add to Cart</button>
+                                                        <form id="add-to-cart-{{$product->product_id}}" action="{{ route('cart.add', $product->product_id) }}" method="POST">
+                                                            @csrf
+                                                            <input type="hidden" name="product_id" value="{{ $product->product_id }}">
+                                                            <input type="hidden" name="quantity" value="1">
+                                                        </form>
                                                     </div>
                                                 </div>
 

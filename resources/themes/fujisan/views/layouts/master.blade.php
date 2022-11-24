@@ -77,7 +77,7 @@
 
             @yield('slider')
 
-            <main class="content-container">
+            <main class="">
 
                 {!! view_render_event('bagisto.shop.layout.content.before') !!}
 
