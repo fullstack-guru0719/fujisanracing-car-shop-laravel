@@ -1,5 +1,3 @@
-\
-
 
 ## Topics
 1. [Introduction](#introduction)
